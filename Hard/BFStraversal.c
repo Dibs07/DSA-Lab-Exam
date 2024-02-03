@@ -23,8 +23,6 @@ Graph *createGraph(int val)
     return g;
 }
 
-void delete(Graph *g) { free(g); }
-
 void createEdge(Graph *g, int v, int w)
 {
     g->adj[v][w] = true;
@@ -70,7 +68,6 @@ int main()
 
     printf("Breadth First Traversal \n");
     BFS(g, 0);
-    delete(g);
 
     return 0;
 }
