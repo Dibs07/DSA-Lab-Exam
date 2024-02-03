@@ -43,13 +43,12 @@ void BFS(Graph *g, int s)
     {
         s = q[front++];
         printf("%d ", s);
-        for (int adjacent = 0; adjacent < g->val;
-             adjacent++)
+        for (int i = 0; i < g->val;i++)
         {
-            if (g->adj[s][adjacent] && !vis[adjacent])
+            if (g->adj[s][i] && !vis[i])
             {
-                vis[adjacent] = true;
-                q[rear++] = adjacent;
+                vis[i] = true;
+                q[rear++] = i;
             }
         }
     }
