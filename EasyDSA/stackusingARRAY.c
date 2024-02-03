@@ -13,7 +13,7 @@ void push(int data)
     printf("Pushed element %d\n", data);
 }
 
-void dequeue()
+void pop()
 {
     if (top == 0)
     {
@@ -54,7 +54,7 @@ int main()
             push(v);
             break;
         case 2:
-            dequeue();
+            pop();
             break;
         case 3:
             display();
