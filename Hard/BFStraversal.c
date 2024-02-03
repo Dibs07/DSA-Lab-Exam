@@ -23,35 +23,35 @@ Graph *createGraph(int val)
     return g;
 }
 
-void Graph_destroy(Graph *g) { free(g); }
+void delete(Graph *g) { free(g); }
 
 void createEdge(Graph *g, int v, int w)
 {
     g->adj[v][w] = true;
 }
-void Graph_BFS(Graph *g, int s)
+void BFS(Graph *g, int s)
 {
-    bool visited[Max];
+    bool vis[Max];
     for (int i = 0; i < g->val; i++)
     {
-        visited[i] = false;
+        vis[i] = false;
     }
-    int queue[Max];
+    int q[Max];
     int front = 0, rear = 0;
-    visited[s] = true;
-    queue[rear++] = s;
+    vis[s] = true;
+    q[rear++] = s;
 
     while (front != rear)
     {
-        s = queue[front++];
+        s = q[front++];
         printf("%d ", s);
         for (int adjacent = 0; adjacent < g->val;
              adjacent++)
         {
-            if (g->adj[s][adjacent] && !visited[adjacent])
+            if (g->adj[s][adjacent] && !vis[adjacent])
             {
-                visited[adjacent] = true;
-                queue[rear++] = adjacent;
+                vis[adjacent] = true;
+                q[rear++] = adjacent;
             }
         }
     }
@@ -69,8 +69,8 @@ int main()
     createEdge(g, 3, 3);
 
     printf("Breadth First Traversal \n");
-    Graph_BFS(g, 0);
-    Graph_destroy(g);
+    BFS(g, 0);
+    delete(g);
 
     return 0;
 }
