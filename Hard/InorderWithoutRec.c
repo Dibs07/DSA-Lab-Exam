@@ -47,7 +47,7 @@ Tree *createTree(int data)
     return root;
 }
 
-void inOrder(Tree *root)
+void HeightOfABT(Tree *root)
 {
     Tree *curr = root;
     bool done = 0;
@@ -86,5 +86,5 @@ int main()
     root->right->left = createTree(3);
     root->right->right = createTree(4);
 
-    inOrder(root);
+    HeightOfABT(root);
 }
