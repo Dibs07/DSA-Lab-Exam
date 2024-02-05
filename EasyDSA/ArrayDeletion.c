@@ -6,7 +6,7 @@ void printArray(int arr[]){
 }
 
 void positionDelition(int arr[],int pos){
-    if(pos>n){
+    if(pos>n || pos<0){
         printf("Invalid Position\n");
         return ;
     }
@@ -24,6 +24,7 @@ void valueDeletion(int arr[],int v){
             return;
         }
     }
+    printf("Value is not in the array");
 }
 
 int main(){
