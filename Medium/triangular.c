@@ -30,7 +30,7 @@ int main()
         {
             for (int j = 0; j < n; j++)
             {
-                if (i < j)
+                if (i > j)
                 {
                     printf("0 ");
                 }
@@ -47,7 +47,7 @@ int main()
         {
             for (int j = 0; j < n; j++)
             {
-                if (i > j)
+                if (i < j)
                 {
                     printf("0 ");
                 }
