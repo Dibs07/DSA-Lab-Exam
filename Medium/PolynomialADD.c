@@ -41,7 +41,7 @@ void addition(node **hp1, node **hp2, node **hp3)
         return;
     }
     node *p = *hp1, *q = *hp2;
-    while (p != NULL || q != NULL)
+    while (p != NULL && q != NULL)
     {
         if (p->exp == q->exp)
         {
@@ -60,6 +60,16 @@ void addition(node **hp1, node **hp2, node **hp3)
             createPolynomial(&*hp3, q->coef, q->exp);
             q = q->next;
         }
+    }
+    while (p != NULL)
+    {
+        createPolynomial(&*hp3, p->coef, p->exp);
+        p = p->next;
+    }
+    while (q != NULL)
+    {
+        createPolynomial(&*hp3, q->coef, q->exp);
+        q = q->next;
     }
 }
 
@@ -104,7 +114,7 @@ int main()
         createPolynomial(&hp2, c, e);
     }
     print(&hp2);
-    addition(&hp1,&hp2,&hp3);
+    addition(&hp1, &hp2, &hp3);
     printf("\nSum of two polynomials is : \n");
     print(&hp3);
 }
