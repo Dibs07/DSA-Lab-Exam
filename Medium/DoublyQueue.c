@@ -39,7 +39,7 @@ void dequeue(queue *q)
     printf("Press 1 to dequeue from down\n");
     printf("Press 0 to dequeue from up\n");
     scanf("%d", &c);
-    if (c == 1 && q->rear1 == q->front1 || q->rear2 == q->front2 & c == 0)
+    if (c == 1 && q->rear1 == q->front1 || q->rear2 == q->front2 && c == 0)
     {
         printf("Underflow \n");
         return;

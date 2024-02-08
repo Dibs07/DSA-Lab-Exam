@@ -39,7 +39,7 @@ void pop(stack *s)
     printf("Press 1 to pop from down\n");
     printf("Press 0 to pop from up\n");
     scanf("%d", &c);
-    if (c == 1 && s->topA == 0|| s->topB ==size-1 & c == 0)
+    if (c == 1 && s->topA == 0|| s->topB ==size-1 && c == 0)
     {
         printf("Underflow \n");
         return;
