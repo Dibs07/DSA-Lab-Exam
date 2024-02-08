@@ -43,7 +43,7 @@ void BFS(Graph *g, int s)
     {
         s = q[front++];
         printf("%d ", s);
-        for (int i = 0; i < g->val;i++)
+        for (int i = 0; i < g->val; i++)
         {
             if (g->adj[s][i] && !vis[i])
             {
@@ -79,28 +79,27 @@ void DFS(Graph *g, int s)
     DFSUtil(g, s, vis);
 }
 
-
 int main()
 {
 
     Graph *g = createGraph(8);
-     createEdge(g,0, 1);    
-        createEdge(g,0, 2);    
-        createEdge(g,0, 3);    
-        createEdge(g,1, 3);    
-        createEdge(g,2, 4);  
-        createEdge(g,3, 5);       
-        createEdge(g,3, 6);    
-        createEdge(g,4, 7);    
-        createEdge(g,4, 5);    
-        createEdge(g,5, 2);    
+    createEdge(g, 0, 1);
+    createEdge(g, 0, 2);
+    createEdge(g, 0, 3);
+    createEdge(g, 1, 3);
+    createEdge(g, 2, 4);
+    createEdge(g, 3, 5);
+    createEdge(g, 3, 6);
+    createEdge(g, 4, 7);
+    createEdge(g, 4, 5);
+    createEdge(g, 5, 2);
 
     printf("Breadth First Traversal \n");
     BFS(g, 0);
     printf("\n");
 
     printf("Depth First Traversal \n");
-    DFS(g,0);
+    DFS(g, 0);
 
     return 0;
 }
