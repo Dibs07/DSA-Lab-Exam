@@ -39,7 +39,7 @@ void pop(stack *s)
     printf("Press 1 to pop from down\n");
     printf("Press 0 to pop from up\n");
     scanf("%d", &c);
-    if (c == 1 && s->topA == 0|| s->topB ==size-1 && c == 0)
+    if ((c == 1 && s->topA == 0) || (c == 0 && s->topB == size - 1))
     {
         printf("Underflow \n");
         return;
@@ -57,19 +57,17 @@ void pop(stack *s)
 void display(stack *s)
 {
     printf("Elements in the stack are : \n");
-    for(int i=0;i<s->topA;i++)
-        printf("%d ",s->x[i]);
+    for (int i = 0; i < s->topA; i++)
+        printf("%d ", s->x[i]);
     printf("\n");
-    for(int i=s->topB+1;i<size;i++)
-        printf("%d ",s->x[i]);
+    for (int i = size - 1; i > s->topB; i--)
+        printf("%d ", s->x[i]);
 }
 
-void main()
+int main()
 {
-    int choice, c = 1;
-    
+    int choice;
     s.topA = 0;
-   
     s.topB = size - 1;
     do
     {
@@ -88,7 +86,7 @@ void main()
             pop(&s);
             break;
         case 3:
-            return;
+            return 0;
         case 4:
             display(&s);
             break;
